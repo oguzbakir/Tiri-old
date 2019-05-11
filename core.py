@@ -10,7 +10,7 @@ def start(update, context):
 
 def mock(update, context):
 	sentence = update.message.reply_to_message.text
-	print("hede", sentence)
+	logging.info("mock")
 	mockedText = ''.join(choice((str.upper, str.lower))(c) for c in sentence)
 	context.bot.send_message(chat_id=update.message.chat_id, text=mockedText)
 
